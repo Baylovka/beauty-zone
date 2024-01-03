@@ -1,0 +1,178 @@
+.about-section {
+    &__container {
+        display: flex;
+        gap: 28px;
+    }
+    
+    &__context {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 710px;
+
+        @media screen and (min-width: $bp-desktop) {
+            font-size: 22px;
+            gap: 40px;
+        }
+    }
+    
+    &__title {
+        text-align: start;
+        max-width: 530px;
+        padding-top: 0;
+
+        @media screen and (min-width: $bp-tablet) {
+            padding-top: 40px;
+        }
+    }
+    
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        line-height: 1.72;
+        font-size: 18px;
+
+        @media screen and (min-width: $bp-desktop) {
+            font-size: 22px;
+            gap: 40px;
+        }
+    }
+    
+    &__photos {
+        display: none;
+        
+        @media screen and (min-width: $bp-tablet) {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            flex-grow: 1;
+        }
+    }
+
+    &__photo {
+        @media screen and (min-width: $bp-tablet) {
+            width: 224px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            width: auto;
+        }
+    }
+
+    &__photo-before {
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+
+        &::before,
+        &::after {
+            display: none;
+
+            @media screen and (min-width: $bp-desktop) {
+                display: block;
+                content: "";
+                position: absolute;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+
+        &::before {
+            background-image: url(../images/decor-star-medium.png);
+            width: 35px;
+            height: 35px;
+            top: 44px;
+            right: 0;
+            animation-name: animation-star-medium;
+            animation-duration: 1.8s;
+        }
+
+        &::after {
+            background-image: url(../images/decor-star-small.png);
+            width: 15px;
+            height: 16px;
+            bottom: 40px;
+            right: 30px;
+            animation-name: animation-star-small;
+            animation-duration: 1.5s;
+        }
+    }
+
+    &__photo-after {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+
+        &::before {
+            display: none;
+
+            @media screen and (min-width: $bp-desktop) {
+                display: block;
+                content: "";
+                position: absolute;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+    
+                background-image: url(../images/decor-star-large.png);
+                width: 56px;
+                height: 56px;
+                top: 0;
+                left: 70px;
+                animation-name: animation-star-large;
+                animation-duration: 2.5s;
+            }
+        }
+    }
+}
+
+@keyframes animation-star-small {
+    0% {
+        transform: rotate(0);
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.2;
+        filter: drop-shadow(2px 2px 4px var(--color-secondary-black));
+    }
+
+    100% {
+        transform: rotate(360deg);
+        scale: 1;
+    }
+}
+
+@keyframes animation-star-medium {
+    0% {
+        transform: rotate(360deg);
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.08;
+        filter: drop-shadow(1px 1px 8px var(--color-primary-dark-grey));
+    }
+
+    100% {
+        transform: rotate(0);
+        scale: 1;
+    }
+}
+
+@keyframes animation-star-large {
+    0% {
+        transform: rotate(0);
+        scale: 1;
+    }
+
+    50% {
+        filter: drop-shadow(1px 1px 4px var(--color-primary-blue));
+        scale: 1.05;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        scale: 1;
+    }
+}

@@ -1,0 +1,16 @@
+.rotate {
+    transform: rotate(180deg);
+}
+
+.bold {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.rounded {
+    border-radius: 50%;
+}
+
+.brand {
+    color: var(--color-primary-blue);
+}
